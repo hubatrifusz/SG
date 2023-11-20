@@ -8,9 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
         <Label HorizontalAlignment="Center" FontWeight="Bold" FontSize="20">Minden idők legjobb 100 könyve.</Label>
-        <ListBox x:Name="bookList">
-        </ListBox>
-        <Label x:Name="UwU">UwU</Label>
-        <ComboBox Width="120" Height="40"/>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Background="Beige" Height="395" Width="300">
+                <Label FontWeight="Bold" FontSize="13">Könyv listázó:</Label>
+                <TextBlock>A könyv nyelve:</TextBlock>
+                
+            </StackPanel>
+            <StackPanel></StackPanel>
+        </StackPanel>
     </StackPanel>
 </Window>
