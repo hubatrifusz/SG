@@ -10,6 +10,6 @@
         <ListBox x:Name="bookList">
         </ListBox>
         <Label x:Name="UwU">UwU</Label>
-        <ComboBox Width="120" Height="40"/>
+        <ComboBox x:Name="LanguageComboBox" Width="120" Height="40" SelectionChanged="LanguageComboBox_SelectionChanged"/>
     </Grid>
 </Window>
