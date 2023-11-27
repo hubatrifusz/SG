@@ -9,8 +9,8 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
 
-        <Label HorizontalAlignment="Center" FontWeight="Bold" FontSize="20">Minden idők legjobb 100 könyve.</Label>
-        <ListView x:Name="bookList" Width="100" Margin="0,52,465,0" Height="127">
+        <Label HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" x:Name="Title">Minden idők legjobb 100 könyve.</Label>
+        <ListView x:Name="bookList" Width="100" Margin="0,52,465,0" Height="127" SelectionChanged="bookList_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <uc:BookControl Book="{Binding}" Width="200"></uc:BookControl>
@@ -22,7 +22,7 @@
                 <Label FontWeight="Bold" FontSize="13">Könyv listázó:</Label>
                 <WrapPanel>
                     <TextBlock>A könyv nyelve:</TextBlock>
-                    <ComboBox x:Name="LanguageComboBox" Width="170" Margin="30,0,0,0" SelectionChanged="LanguageComboBox_SelectionChanged"/>
+                    <ComboBox x:Name="LanguageComboBox" Width="170" Margin="30,0,0,0" SelectionChanged="LanguageComboBox_SelectionChanged" SelectedIndex="0"/>
                 </WrapPanel>
             </StackPanel>
             <StackPanel Width="200">
@@ -31,9 +31,11 @@
                 <TextBlock x:Name="nyelv" Text="Nyelve:" FontWeight="Bold"/>
                 <TextBlock x:Name="orszag" Text="Ország:" FontWeight="Bold"/>
                 <TextBlock x:Name="megjelenes" Text="Megjelenés éve:" FontWeight="Bold"/>
-                <TextBlock><Hyperlink x:Name="link">Wikipédia link</Hyperlink></TextBlock>
-
-
+                <TextBlock>
+                    <Hyperlink Name="link" NavigateUri="" RequestNavigate="HL_wiki_RequestNavigate">
+                         <Run Text="Wikipédia link"/>
+                     </Hyperlink>
+                </TextBlock>
             </StackPanel>
             <StackPanel Width="300" Height="1038" x:Name="Picture" Background="Aqua" HorizontalAlignment="Right">
                 <Image Width="200" Source="things\images\absalom-absalom.jpg"/>
