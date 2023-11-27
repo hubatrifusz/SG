@@ -29,6 +29,7 @@ namespace BestBooks
             InitializeComponent();
             books = ReadDatabase();
             CreateComboBox();
+            bookList.ItemsSource = books;
         }
         private List<Book> ReadDatabase()
         {
