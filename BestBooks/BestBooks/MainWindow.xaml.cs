@@ -1,6 +1,8 @@
-﻿using SQLite;
+﻿using Microsoft.VisualBasic;
+using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Reflection.Metadata.BlobBuilder;
 
 namespace BestBooks
@@ -24,12 +27,12 @@ namespace BestBooks
     public partial class MainWindow : Window
     {
         List<Book> books = new List<Book>();
+        List<Book> search = new List<Book>();
         public MainWindow()
         {
             InitializeComponent();
             books = ReadDatabase();
             CreateComboBox();
-            bookList.ItemsSource = books;
         }
         private List<Book> ReadDatabase()
         {
@@ -53,6 +56,56 @@ namespace BestBooks
         private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string selectedItem = LanguageComboBox.SelectedItem.ToString();
+            var selectedBooks = books.Where(book => book.Language == selectedItem).ToList();
+            Title.Content = selectedBooks.Count;
+            search = selectedBooks;
+            bookList.ItemsSource = search;
         }
+
+        private void bookList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (bookList.SelectedItem != null)
+            {
+                Book selectedBook = bookList.SelectedItem as Book;
+                ShowBookDetails(selectedBook);
+            }
+            else
+            {
+                Title.Content = "Nincs kiválasztott elem";
+            }
+        }
+
+        private void ShowBookDetails(Book book)
+        {
+            szerzo.Text = book.Author;
+            cim.Text = book.Title;
+            nyelv.Text = book.Language;
+            orszag.Text = book.Country;
+            megjelenes.Text = book.Year.ToString();
+            Title.Content = book.WikipediaLink;
+            string source = "things\\images\\" + book.imageName;
+
+            // Kép forrásának beállítása
+            image.Source = new BitmapImage(new Uri(source, UriKind.RelativeOrAbsolute));
+            Title.Content = image.Source;
+
+            if (book.WikipediaLink != null && book.WikipediaLink != "")
+            {
+                string wikiLink = book.WikipediaLink; 
+                Uri uri = new Uri(wikiLink);
+                LinkRun.Text = "Wikipédia link";
+                link.NavigateUri = uri;
+            }
+            else
+            {
+                LinkRun.Text = "";
+            }
+        }
+
+        private void HL_wiki_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+        }
+
     }
 }
