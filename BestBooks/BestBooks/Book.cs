@@ -17,7 +17,6 @@ namespace BestBooks
         public string Language { get; set; }
         public int Pages { get; set; }
         public string imageName { get; set; }
-        public string WikipeiaLink { get; set; }
-
+        public string WikipediaLink { get; set; }
     }
 }
