@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace BestBooks
 {
@@ -22,21 +23,39 @@ namespace BestBooks
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Book> books = new List<Book>();
         public MainWindow()
         {
             InitializeComponent();
-            ReadDatabase();
-
+            books = ReadDatabase();
+            CreateComboBox();
+            bookList.ItemsSource = books;
         }
-        private void ReadDatabase()
+        private List<Book> ReadDatabase()
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             string ConnectionString = System.IO.Path.Combine(currentDirectory, "things\\books.db");
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
             {
                 List<Book> books = connection.Table<Book>().ToList();
-                UwU.Content = books.Count;
+                return books;
             }
+        }
+        private void CreateComboBox()
+        {
+            List<string> uniqueLanguages = books.Select(book => book.Language).Distinct().ToList();
+            UwU.Content = uniqueLanguages.Count();
+            foreach (string language in uniqueLanguages)
+            {
+                LanguageComboBox.Items.Add(language);
+                UwU.Content = language;
+            }
+        }
+
+        private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedItem = LanguageComboBox.SelectedItem.ToString();
+            UwU.Content = selectedItem;
         }
     }
 }
