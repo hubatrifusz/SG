@@ -7,15 +7,36 @@
         xmlns:local="clr-namespace:BestBooks"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ComboBox x:Name="LanguageComboBox" Width="120" Height="40" SelectionChanged="LanguageComboBox_SelectionChanged"/>
-        <ListView x:Name="bookList" Margin="0,52,465,0">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <uc:BookControl Book="{Binding}" Width="200"></uc:BookControl>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Label x:Name="UwU" Margin="0,0,608,406">UwU</Label>
-    </Grid>
+    <StackPanel>
+        <Label HorizontalAlignment="Center" FontWeight="Bold" FontSize="20">Minden idők legjobb 100 könyve.</Label>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Background="Beige" Height="1038" Width="300" HorizontalAlignment="Left">
+                <Label FontWeight="Bold" FontSize="13">Könyv listázó:</Label>
+                <WrapPanel>
+                    <TextBlock>A könyv nyelve:</TextBlock>
+                    <ComboBox x:Name="LanguageComboBox" Width="170" Margin="30,0,0,0" SelectionChanged="LanguageComboBox_SelectionChanged"/>
+                </WrapPanel>
+                   <ListView x:Name="bookList" Margin="0,52,465,0">
+                      <ListView.ItemTemplate>
+                          <DataTemplate>
+                              <uc:BookControl Book="{Binding}" Width="200"></uc:BookControl>
+                          </DataTemplate>
+                      </ListView.ItemTemplate>
+                  </ListView>
+            </StackPanel>
+            <StackPanel Width="200">
+                <TextBlock x:Name="szerzo" Text="Szerző:" FontWeight="Bold"/>
+                <TextBlock x:Name="cim" Text="Könyv címe:" FontWeight="Bold"/>
+                <TextBlock x:Name="nyelv" Text="Nyelve:" FontWeight="Bold"/>
+                <TextBlock x:Name="orszag" Text="Ország:" FontWeight="Bold"/>
+                <TextBlock x:Name="megjelenes" Text="Megjelenés éve:" FontWeight="Bold"/>
+                <TextBlock><Hyperlink x:Name="link">Wikipédia link</Hyperlink></TextBlock>
+
+
+            </StackPanel>
+            <StackPanel Width="300" Height="1038" x:Name="Picture" Background="Aqua" HorizontalAlignment="Right">
+                <Image Width="200" Source="things\images\absalom-absalom.jpg"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
 </Window>
