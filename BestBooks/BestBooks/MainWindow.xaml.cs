@@ -44,18 +44,15 @@ namespace BestBooks
         private void CreateComboBox()
         {
             List<string> uniqueLanguages = books.Select(book => book.Language).Distinct().ToList();
-            UwU.Content = uniqueLanguages.Count();
             foreach (string language in uniqueLanguages)
             {
                 LanguageComboBox.Items.Add(language);
-                UwU.Content = language;
             }
         }
 
         private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string selectedItem = LanguageComboBox.SelectedItem.ToString();
-            UwU.Content = selectedItem;
         }
     }
 }

@@ -8,7 +8,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
+
         <Label HorizontalAlignment="Center" FontWeight="Bold" FontSize="20">Minden idők legjobb 100 könyve.</Label>
+        <ListView x:Name="bookList" Width="100" Margin="0,52,465,0" Height="127">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <uc:BookControl Book="{Binding}" Width="200"></uc:BookControl>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <StackPanel Orientation="Horizontal">
             <StackPanel Background="Beige" Height="1038" Width="300" HorizontalAlignment="Left">
                 <Label FontWeight="Bold" FontSize="13">Könyv listázó:</Label>
@@ -16,13 +24,6 @@
                     <TextBlock>A könyv nyelve:</TextBlock>
                     <ComboBox x:Name="LanguageComboBox" Width="170" Margin="30,0,0,0" SelectionChanged="LanguageComboBox_SelectionChanged"/>
                 </WrapPanel>
-                   <ListView x:Name="bookList" Margin="0,52,465,0">
-                      <ListView.ItemTemplate>
-                          <DataTemplate>
-                              <uc:BookControl Book="{Binding}" Width="200"></uc:BookControl>
-                          </DataTemplate>
-                      </ListView.ItemTemplate>
-                  </ListView>
             </StackPanel>
             <StackPanel Width="200">
                 <TextBlock x:Name="szerzo" Text="Szerző:" FontWeight="Bold"/>
