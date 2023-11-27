@@ -57,7 +57,6 @@ namespace BestBooks
         {
             string selectedItem = LanguageComboBox.SelectedItem.ToString();
             var selectedBooks = books.Where(book => book.Language == selectedItem).ToList();
-            Title.Content = selectedBooks.Count;
             search = selectedBooks;
             bookList.ItemsSource = search;
         }
@@ -69,10 +68,6 @@ namespace BestBooks
                 Book selectedBook = bookList.SelectedItem as Book;
                 ShowBookDetails(selectedBook);
             }
-            else
-            {
-                Title.Content = "Nincs kiválasztott elem";
-            }
         }
 
         private void ShowBookDetails(Book book)
@@ -82,12 +77,10 @@ namespace BestBooks
             nyelv.Text = book.Language;
             orszag.Text = book.Country;
             megjelenes.Text = book.Year.ToString();
-            Title.Content = book.WikipediaLink;
             string source = "things\\images\\" + book.imageName;
 
             // Kép forrásának beállítása
             image.Source = new BitmapImage(new Uri(source, UriKind.RelativeOrAbsolute));
-            Title.Content = image.Source;
 
             if (book.WikipediaLink != null && book.WikipediaLink != "")
             {
@@ -107,5 +100,9 @@ namespace BestBooks
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
         }
 
+        private void bookList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

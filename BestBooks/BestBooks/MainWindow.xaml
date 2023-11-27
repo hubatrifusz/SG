@@ -16,7 +16,7 @@
                     <TextBlock>A könyv nyelve:</TextBlock>
                     <ComboBox x:Name="LanguageComboBox" Width="170" Margin="30,0,0,0" SelectionChanged="LanguageComboBox_SelectionChanged" SelectedIndex="0"/>
                 </WrapPanel>
-                <ListView Background="Beige" x:Name="bookList" Width="290" Margin="5" Height="276">
+                <ListView Background="Beige" x:Name="bookList" Width="290" Margin="5" Height="276" SelectionChanged="bookList_SelectionChanged_1">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <uc:BookControl Book="{Binding}" Width="200"></uc:BookControl>
@@ -54,7 +54,7 @@
 
             </Grid>
 
-            <StackPanel Width="300" Height="1038" x:Name="Picture" Background="Aqua" HorizontalAlignment="Right">
+            <StackPanel Width="300" Height="1038" x:Name="Picture" HorizontalAlignment="Right">
                 <Image x:Name="image" Width="250" Source="/things-fall-apart.jpg"/>
             </StackPanel>
         </StackPanel>
