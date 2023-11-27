@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Microsoft.VisualBasic;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Reflection.Metadata.BlobBuilder;
 
 namespace BestBooks
@@ -78,7 +80,24 @@ namespace BestBooks
             nyelv.Text = book.Language;
             orszag.Text = book.Country;
             megjelenes.Text = book.Year.ToString();
-            link.NavigateUri = book.WikipeiaLink;
+            Title.Content = book.WikipediaLink;
+            string source = "things\\images\\" + book.imageName;
+
+            // Kép forrásának beállítása
+            image.Source = new BitmapImage(new Uri(source, UriKind.RelativeOrAbsolute));
+            Title.Content = image.Source;
+
+            if (book.WikipediaLink != null && book.WikipediaLink != "")
+            {
+                string wikiLink = book.WikipediaLink; 
+                Uri uri = new Uri(wikiLink);
+                LinkRun.Text = "Wikipédia link";
+                link.NavigateUri = uri;
+            }
+            else
+            {
+                LinkRun.Text = "";
+            }
         }
 
         private void HL_wiki_RequestNavigate(object sender, RequestNavigateEventArgs e)
