@@ -44,8 +44,8 @@ namespace BestBooks.Controls
         {
             if (d is BookControl control)
             {
-                control.title.Text = (e.NewValue as Book).Title;
-                control.author.Text = (e.NewValue as Book).Author;
+                control.title.Text += (e.NewValue as Book).Title;
+                control.author.Text += (e.NewValue as Book).Author;
             }
         }
     }
