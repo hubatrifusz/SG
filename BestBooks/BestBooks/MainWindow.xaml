@@ -16,7 +16,7 @@
                     <TextBlock>A könyv nyelve:</TextBlock>
                     <ComboBox x:Name="LanguageComboBox" Width="170" Margin="30,0,0,0" SelectionChanged="LanguageComboBox_SelectionChanged" SelectedIndex="0"/>
                 </WrapPanel>
-                <ListView Background="Beige" x:Name="bookList" Width="290" Margin="5" Height="276" SelectionChanged="bookList_SelectionChanged_1">
+                <ListView Background="Beige" x:Name="bookList" Width="290" Margin="5" Height="276" SelectionChanged="bookList_SelectionChanged">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <uc:BookControl Book="{Binding}" Width="200"></uc:BookControl>

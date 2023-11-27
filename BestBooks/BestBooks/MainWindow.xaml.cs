@@ -100,9 +100,5 @@ namespace BestBooks
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
         }
 
-        private void bookList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
