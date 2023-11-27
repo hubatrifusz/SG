@@ -17,12 +17,12 @@
                 </WrapPanel>
             </StackPanel>
             <StackPanel Width="200">
-                <TextBlock Text="Szerző:" FontWeight="Bold"/>
-                <TextBlock Text="Könyv címe:" FontWeight="Bold"/>
-                <TextBlock Text="Nyelve:" FontWeight="Bold"/>
-                <TextBlock Text="Ország:" FontWeight="Bold"/>
-                <TextBlock Text="Megjelenés éve:" FontWeight="Bold"/>
-                <TextBlock><Hyperlink>Wikipédia link</Hyperlink></TextBlock>
+                <TextBlock x:Name="szerzo" Text="Szerző:" FontWeight="Bold"/>
+                <TextBlock x:Name="cim" Text="Könyv címe:" FontWeight="Bold"/>
+                <TextBlock x:Name="nyelv" Text="Nyelve:" FontWeight="Bold"/>
+                <TextBlock x:Name="orszag" Text="Ország:" FontWeight="Bold"/>
+                <TextBlock x:Name="megjelenes" Text="Megjelenés éve:" FontWeight="Bold"/>
+                <TextBlock><Hyperlink x:Name="link">Wikipédia link</Hyperlink></TextBlock>
 
 
             </StackPanel>
