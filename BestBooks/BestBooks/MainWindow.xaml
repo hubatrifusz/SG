@@ -8,30 +8,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-
-        <Label HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" x:Name="Title">Minden idők legjobb 100 könyve.</Label>
-        <ListView x:Name="bookList" Width="100" Margin="0,52,465,0" Height="127" SelectionChanged="bookList_SelectionChanged" SelectedIndex="0">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <uc:BookControl Book="{Binding}" Width="200"></uc:BookControl>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Label HorizontalAlignment="Center" FontWeight="Bold" FontSize="20">Minden idők legjobb 100 könyve.</Label>
         <StackPanel Orientation="Horizontal">
-            <StackPanel Background="Beige" Height="1038" Width="300" HorizontalAlignment="Left">
+            <StackPanel Background="Beige"  Height="1038" Width="300" HorizontalAlignment="Left">
                 <Label FontWeight="Bold" FontSize="13">Könyv listázó:</Label>
                 <WrapPanel>
                     <TextBlock>A könyv nyelve:</TextBlock>
                     <ComboBox x:Name="LanguageComboBox" Width="170" Margin="30,0,0,0" SelectionChanged="LanguageComboBox_SelectionChanged" SelectedIndex="0"/>
                 </WrapPanel>
+                <ListView Background="Beige" x:Name="bookList" Width="290" Margin="5" Height="276">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <uc:BookControl Book="{Binding}" Width="200"></uc:BookControl>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackPanel>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <StackPanel Width="200" Grid.Column="0" Margin="5,0,5,0">
                     <TextBlock x:Name="szerzo_" Text="Szerző:" FontWeight="Bold"/>
                     <TextBlock x:Name="cim_" Text="Könyv címe:" FontWeight="Bold"/>
                     <TextBlock x:Name="nyelv_" Text="Nyelve:" FontWeight="Bold"/>
@@ -56,7 +55,7 @@
             </Grid>
 
             <StackPanel Width="300" Height="1038" x:Name="Picture" Background="Aqua" HorizontalAlignment="Right">
-                <Image x:Name="image" Width="200" Source="/things-fall-apart.jpg"/>
+                <Image x:Name="image" Width="250" Source="/things-fall-apart.jpg"/>
             </StackPanel>
         </StackPanel>
     </StackPanel>
