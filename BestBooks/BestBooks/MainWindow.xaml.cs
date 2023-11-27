@@ -27,12 +27,12 @@ namespace BestBooks
     public partial class MainWindow : Window
     {
         List<Book> books = new List<Book>();
+        List<Book> search = new List<Book>();
         public MainWindow()
         {
             InitializeComponent();
             books = ReadDatabase();
             CreateComboBox();
-            bookList.ItemsSource = books;
         }
         private List<Book> ReadDatabase()
         {
@@ -58,6 +58,8 @@ namespace BestBooks
             string selectedItem = LanguageComboBox.SelectedItem.ToString();
             var selectedBooks = books.Where(book => book.Language == selectedItem).ToList();
             Title.Content = selectedBooks.Count;
+            search = selectedBooks;
+            bookList.ItemsSource = search;
         }
 
         private void bookList_SelectionChanged(object sender, SelectionChangedEventArgs e)
