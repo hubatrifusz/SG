@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BestBooks
 {
-    internal class dataQuery
+    public class dataQuery
     {
         public Book Create(IData adatForrás, Book névjegy)
         {
