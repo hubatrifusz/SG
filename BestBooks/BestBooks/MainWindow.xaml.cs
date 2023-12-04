@@ -46,10 +46,16 @@ namespace BestBooks
 
         private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string selectedItem = LanguageComboBox.SelectedItem.ToString();
-            var selectedBooks = books.Where(book => book.Language == selectedItem).ToList();
+            string selectedLanguage = LanguageComboBox.SelectedItem.ToString();
+            List<Book> selectedBooks = BookFilterWithLanguage(selectedLanguage);
             search = selectedBooks;
             bookList.ItemsSource = search;
+        }
+
+        public List<Book> BookFilterWithLanguage(string Language)
+        {
+            List<Book> selectedBooks = books.Where(book => book.Language == Language).ToList();
+            return selectedBooks;
         }
 
         private void bookList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,10 +74,7 @@ namespace BestBooks
             nyelv.Text = book.Language;
             orszag.Text = book.Country;
             megjelenes.Text = book.Year.ToString();
-            string source = "things\\images\\" + book.imageName;
-
-            // Kép forrásának beállítása
-            image.Source = new BitmapImage(new Uri(source, UriKind.RelativeOrAbsolute));
+            image.Source = createImage(book.imageName);
 
             if (book.WikipediaLink != null && book.WikipediaLink != "")
             {
@@ -84,6 +87,13 @@ namespace BestBooks
             {
                 LinkRun.Text = "";
             }
+        }
+
+        public BitmapImage createImage(string imageName)
+        {
+            string source = "things\\images\\" + imageName;
+            BitmapImage image = new BitmapImage(new Uri(source, UriKind.RelativeOrAbsolute));
+            return image;
         }
 
         private void HL_wiki_RequestNavigate(object sender, RequestNavigateEventArgs e)
