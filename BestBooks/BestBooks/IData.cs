@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BestBooks
 {
-    internal interface IData
+    public interface IData
     {
         public Book Create(Book névjegy);
         public List<Book> ReadDatabase();
