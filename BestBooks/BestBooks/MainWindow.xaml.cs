@@ -31,18 +31,9 @@ namespace BestBooks
         public MainWindow()
         {
             InitializeComponent();
-            books = ReadDatabase();
+            SQLiteData DataBaseControl = new SQLiteData();
+            books = DataBaseControl.ReadDatabase();
             CreateComboBox();
-        }
-        private List<Book> ReadDatabase()
-        {
-            string currentDirectory = Directory.GetCurrentDirectory();
-            string ConnectionString = System.IO.Path.Combine(currentDirectory, "things\\books.db");
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
-            {
-                List<Book> books = connection.Table<Book>().ToList();
-                return books;
-            }
         }
         private void CreateComboBox()
         {
@@ -98,11 +89,6 @@ namespace BestBooks
         private void HL_wiki_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
-        }
-
-        private void bookList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

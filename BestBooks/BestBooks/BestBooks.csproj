@@ -1,0 +1,434 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="things-fall-apart.jpg" />
+    <None Remove="things\images\a-Dolls-house.jpg" />
+    <None Remove="things\images\a-la-recherche-du-temps-perdu.jpg" />
+    <None Remove="things\images\absalom-absalom.jpg" />
+    <None Remove="things\images\anna-karenina.jpg" />
+    <None Remove="things\images\beloved.jpg" />
+    <None Remove="things\images\berlin-alexanderplatz.jpg" />
+    <None Remove="things\images\blindness.jpg" />
+    <None Remove="things\images\bostan.jpg" />
+    <None Remove="things\images\buddenbrooks.jpg" />
+    <None Remove="things\images\children-of-gebelawi.jpg" />
+    <None Remove="things\images\confessions-of-zeno.jpg" />
+    <None Remove="things\images\crime-and-punishment.jpg" />
+    <None Remove="things\images\dead-souls.jpg" />
+    <None Remove="things\images\diary-of-a-madman.jpg" />
+    <None Remove="things\images\don-quijote-de-la-mancha.jpg" />
+    <None Remove="things\images\essais.jpg" />
+    <None Remove="things\images\fairy-tales.jpg" />
+    <None Remove="things\images\faust.jpg" />
+    <None Remove="things\images\ficciones.jpg" />
+    <None Remove="things\images\gargantua-and-pantagruel.jpg" />
+    <None Remove="things\images\great-expectations.jpg" />
+    <None Remove="things\images\gullivers-travels.jpg" />
+    <None Remove="things\images\gypsy-ballads.jpg" />
+    <None Remove="things\images\hamlet.jpg" />
+    <None Remove="things\images\history.jpg" />
+    <None Remove="things\images\hunger.jpg" />
+    <None Remove="things\images\independent-people.jpg" />
+    <None Remove="things\images\invisible-man.jpg" />
+    <None Remove="things\images\jacques-the-fatalist.jpg" />
+    <None Remove="things\images\king-lear.jpg" />
+    <None Remove="things\images\l-education-sentimentale.jpg" />
+    <None Remove="things\images\l-etranger.jpg" />
+    <None Remove="things\images\le-pere-goriot.jpg" />
+    <None Remove="things\images\le-rouge-et-le-noir.jpg" />
+    <None Remove="things\images\leaves-of-grass.jpg" />
+    <None Remove="things\images\lolita.jpg" />
+    <None Remove="things\images\love-in-the-time-of-cholera.jpg" />
+    <None Remove="things\images\madame-bovary.jpg" />
+    <None Remove="things\images\medea.jpg" />
+    <None Remove="things\images\memoirs-of-hadrian.jpg" />
+    <None Remove="things\images\middlemarch.jpg" />
+    <None Remove="things\images\midnights-children.jpg" />
+    <None Remove="things\images\moby-dick.jpg" />
+    <None Remove="things\images\molloy-malone-dies-the-unnamable.jpg" />
+    <None Remove="things\images\mrs-dalloway.jpg" />
+    <None Remove="things\images\nineteen-eighty-four.jpg" />
+    <None Remove="things\images\njals-saga.jpg" />
+    <None Remove="things\images\nostromo.jpg" />
+    <None Remove="things\images\oedipus-the-king.jpg" />
+    <None Remove="things\images\one-hundred-years-of-solitude.jpg" />
+    <None Remove="things\images\one-thousand-and-one-nights.jpg" />
+    <None Remove="things\images\othello.jpg" />
+    <None Remove="things\images\pedro-paramo.jpg" />
+    <None Remove="things\images\pippi-longstocking.jpg" />
+    <None Remove="things\images\poems-giacomo-leopardi.jpg" />
+    <None Remove="things\images\poems-paul-celan.jpg" />
+    <None Remove="things\images\pride-and-prejudice.jpg" />
+    <None Remove="things\images\ramayana.jpg" />
+    <None Remove="things\images\season-of-migration-to-the-north.jpg" />
+    <None Remove="things\images\sons-and-lovers.jpg" />
+    <None Remove="things\images\stories-of-anton-chekhov.jpg" />
+    <None Remove="things\images\stories-of-franz-kafka.jpg" />
+    <None Remove="things\images\tales-and-poems-of-edgar-allan-poe.jpg" />
+    <None Remove="things\images\the-adventures-of-huckleberry-finn.jpg" />
+    <None Remove="things\images\the-aeneid.jpg" />
+    <None Remove="things\images\the-book-of-disquiet.jpg" />
+    <None Remove="things\images\the-book-of-job.jpg" />
+    <None Remove="things\images\the-brothers-karamazov.jpg" />
+    <None Remove="things\images\the-canterbury-tales.jpg" />
+    <None Remove="things\images\the-castle.jpg" />
+    <None Remove="things\images\the-death-of-ivan-ilyich.jpg" />
+    <None Remove="things\images\the-decameron.jpg" />
+    <None Remove="things\images\the-devil-to-pay-in-the-backlands.jpg" />
+    <None Remove="things\images\the-divine-comedy.jpg" />
+    <None Remove="things\images\the-epic-of-gilgamesh.jpg" />
+    <None Remove="things\images\the-golden-notebook.jpg" />
+    <None Remove="things\images\the-idiot.jpg" />
+    <None Remove="things\images\the-iliad-of-homer.jpg" />
+    <None Remove="things\images\the-life-and-opinions-of-tristram-shandy.jpg" />
+    <None Remove="things\images\the-magic-mountain.jpg" />
+    <None Remove="things\images\the-mahab-harata.jpg" />
+    <None Remove="things\images\the-man-without-qualities.jpg" />
+    <None Remove="things\images\the-masnavi.jpg" />
+    <None Remove="things\images\the-metamorphoses-of-ovid.jpg" />
+    <None Remove="things\images\the-odyssey-of-homer.jpg" />
+    <None Remove="things\images\the-old-man-and-the-sea.jpg" />
+    <None Remove="things\images\the-possessed.jpg" />
+    <None Remove="things\images\the-recognition-of-shakuntala.jpg" />
+    <None Remove="things\images\the-sound-and-the-fury.jpg" />
+    <None Remove="things\images\the-sound-of-the-mountain.jpg" />
+    <None Remove="things\images\the-tale-of-genji.jpg" />
+    <None Remove="things\images\the-tin-drum.jpg" />
+    <None Remove="things\images\the-trial.jpg" />
+    <None Remove="things\images\things-fall-apart.jpg" />
+    <None Remove="things\images\to-the-lighthouse.jpg" />
+    <None Remove="things\images\ulysses.jpg" />
+    <None Remove="things\images\voyage-au-bout-de-la-nuit.jpg" />
+    <None Remove="things\images\war-and-peace.jpg" />
+    <None Remove="things\images\wuthering-heights.jpg" />
+    <None Remove="things\images\zorba-the-greek.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="things-fall-apart.jpg" />
+    <Resource Include="things\images\a-Dolls-house.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\a-la-recherche-du-temps-perdu.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\absalom-absalom.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\anna-karenina.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\beloved.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\berlin-alexanderplatz.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\blindness.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\bostan.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\buddenbrooks.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\children-of-gebelawi.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\confessions-of-zeno.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\crime-and-punishment.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\dead-souls.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\diary-of-a-madman.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\don-quijote-de-la-mancha.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\essais.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\fairy-tales.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\faust.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\ficciones.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\gargantua-and-pantagruel.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\great-expectations.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\gullivers-travels.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\gypsy-ballads.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\hamlet.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\history.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\hunger.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\independent-people.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\invisible-man.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\jacques-the-fatalist.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\king-lear.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\l-education-sentimentale.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\l-etranger.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\le-pere-goriot.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\le-rouge-et-le-noir.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\leaves-of-grass.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\lolita.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\love-in-the-time-of-cholera.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\madame-bovary.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\medea.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\memoirs-of-hadrian.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\middlemarch.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\midnights-children.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\moby-dick.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\molloy-malone-dies-the-unnamable.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\mrs-dalloway.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\nineteen-eighty-four.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\njals-saga.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\nostromo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\oedipus-the-king.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\one-hundred-years-of-solitude.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\one-thousand-and-one-nights.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\othello.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\pedro-paramo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\pippi-longstocking.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\poems-giacomo-leopardi.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\poems-paul-celan.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\pride-and-prejudice.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\ramayana.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\season-of-migration-to-the-north.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\sons-and-lovers.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\stories-of-anton-chekhov.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\stories-of-franz-kafka.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\tales-and-poems-of-edgar-allan-poe.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-adventures-of-huckleberry-finn.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-aeneid.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-book-of-disquiet.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-book-of-job.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-brothers-karamazov.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-canterbury-tales.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-castle.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-death-of-ivan-ilyich.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-decameron.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-devil-to-pay-in-the-backlands.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-divine-comedy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-epic-of-gilgamesh.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-golden-notebook.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-idiot.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-iliad-of-homer.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-life-and-opinions-of-tristram-shandy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-magic-mountain.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-mahab-harata.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-man-without-qualities.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-masnavi.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-metamorphoses-of-ovid.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-odyssey-of-homer.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-old-man-and-the-sea.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-possessed.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-recognition-of-shakuntala.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-sound-and-the-fury.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-sound-of-the-mountain.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-tale-of-genji.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-tin-drum.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\the-trial.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="things\images\things-fall-apart.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\to-the-lighthouse.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\ulysses.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\voyage-au-bout-de-la-nuit.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\war-and-peace.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\wuthering-heights.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="things\images\zorba-the-greek.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="things\books.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="things\library.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
